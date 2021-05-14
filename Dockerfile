@@ -28,8 +28,5 @@ RUN set -ex \
 	&& tar -xzvf dogecoin.tar.gz -C /usr/local --strip-components=1 --exclude=*-qt \
 	&& rm -rf /tmp/*
 
-EXPOSE 9998 9999 19998 19999 22556
-
-COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
+EXPOSE 22556
 CMD ["dogecoind"]
